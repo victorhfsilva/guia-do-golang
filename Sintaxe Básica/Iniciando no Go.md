@@ -136,9 +136,22 @@ O workspace do Go é composto por três diretórios principais: `src`, `pkg` e `
 
 1. Para rodar diretamente um arquivo Go sem a necessidade de compilar manualmente, use:
    
-   ```bash
-   go run main.go
-   ```
+```bash
+go run main.go
+```
 
 2. Isso compila e executa o arquivo em um único passo.
 
+## Criando um módulo Go
+
+```bash
+go mod init bank
+```
+
+Isso cria um arquivo go.mod com o nome do módulo bank. Certifique-se de que o nome do módulo no go.mod corresponda ao caminho que você está usando para importar os pacotes.
+
+```go
+import (
+   "bank/utils"
+)
+```
